@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#32af85</color>
+    <color name="colorPrimaryDark">#349775</color>
+    <color name="colorAccent">#f9bb13</color>
+
+    <color name="colorTitle">#3fb48d</color>
+    <color name="colorLabel">#666666</color>
+
+    <!-- colors related to default buttons -->
+    <color name="colorBackgroundButton">#32af85</color>
+    <color name="colorTextButton">#FDFCFC</color>
+
+    <color name="colorInputBackground">#eeeff3</color>
+
+
+</resources>

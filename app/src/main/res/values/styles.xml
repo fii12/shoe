@@ -1,0 +1,70 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DefaultLabel">
+        <item name="android:textColor">@color/colorLabel</item>
+        <item name="android:textSize">@dimen/label_font_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="DefaultInput">
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@color/colorInputBackground</item>
+        <item name="android:padding">@dimen/input_padding</item>
+    </style>
+
+    <style name="DefaultButton">
+        <item name="android:background">@color/colorBackgroundButton</item>
+        <item name="android:textColor">@color/colorTextButton</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/button_font_size</item>
+        <item name="android:padding">@dimen/button_padding</item>
+
+    </style>
+
+    <style name="SignUpButton" parent="@style/DefaultButton">
+        <item name="android:background">@color/colorTextButton</item>
+        <item name="android:textColor">@color/colorBackgroundButton</item>
+    </style>
+
+    <style name="OnBoardDescriptionText">
+        <item name="android:layout_margin">@dimen/fragment_horizontal_margin</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/colorLabel</item>
+        <item name="android:textSize">@dimen/on_board_desc</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="OnBoardTitle">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorTitle</item>
+        <item name="android:textSize">@dimen/on_board_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_marginStart">@dimen/fragment_horizontal_margin</item>
+        <item name="android:layout_marginTop">@dimen/fragment_vertical_margin</item>
+        <item name="android:layout_marginEnd">@dimen/fragment_horizontal_margin</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!--button strings-->
+    <string name="login_logo">Login logo</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="singup">Sign Up</string>
+    <string name="next">Next</string>
+
+    <!--labels-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <!-- Strings related to screen title -->
+    <string name="login_title">Login</string>
+    <string name="welcome_title">Welcome</string>
+    <string name="instruction_title">Instruction</string>
+    <string name="listing_title">Listing</string>
+    <string name="detail_title">Detail</string>
+
+    <!--dummy text-->
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+
+    <string name="welcome">Welcome</string>
+    <string name="instruction">Instruction</string>
+    <string name="logout">Logout</string>
+
+</resources>
