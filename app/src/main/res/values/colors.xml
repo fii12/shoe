@@ -11,6 +11,8 @@
     <color name="colorBackgroundButton">#32af85</color>
     <color name="colorTextButton">#FDFCFC</color>
 
+    <color name="colorBackgroundCancelButton">#B50000</color>
+
     <color name="colorInputBackground">#eeeff3</color>
 
 

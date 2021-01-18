@@ -13,11 +13,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        z
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        navController = this.findNavController(R.id.my_nav_host_fragment)
+        NavigationUI.setupActionBarWithNavController(this, navController)
+        Timber.plant(Timber.DebugTree())
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
+    override fun onSupportNavigateUp(): Boolean = navController.navigateUp()
 
-    }
 }

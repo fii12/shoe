@@ -15,7 +15,7 @@ import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ShoeItemBinding
 
 class ShoeListFragment : Fragment() {
-    private val shoesViewModel: ShoesViewModel by activityViewModels()
+    private val viewModel: ShoesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +27,8 @@ class ShoeListFragment : Fragment() {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailsFragment())
         }
 
-        shoesViewModel.shoes.observe(viewLifecycleOwner, Observer {
-            shoesViewModel.shoes.value?.forEach {
+        viewModel.shoes.observe(viewLifecycleOwner, Observer {
+            viewModel.shoes.value?.forEach {
                 val itemBinding = ShoeItemBinding.inflate(layoutInflater, null, false)
                 itemBinding.shoeItem = it
                 binding.shoeListLinear.addView(itemBinding.root)

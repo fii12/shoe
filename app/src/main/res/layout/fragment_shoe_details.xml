@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <!--    ViewGroup user here is ConstraintLayout, since screen is more complex and we don't want to get deep nesting hierarchy,-->
+    <!--    also widgets need to be positioned relative to each other, and I found this perfect opportunity to use chains-->
     <data>
 
         <variable
@@ -11,9 +13,14 @@
         <variable
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
+
+        <variable
+            name="fragment"
+            type="com.udacity.shoestore.screens.shoedetails.ShoeDetailsFragment" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -21,80 +28,181 @@
         <TextView
             android:id="@+id/shoe_name_text"
             style="@style/DefaultLabel"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:layout_marginEnd="8dp"
+            android:text="@string/shoe_name"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shoe_name_edit"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:layout_conversion_absoluteHeight="24dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
         <EditText
             android:id="@+id/shoe_name_edit"
             style="@style/DefaultInput"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@={shoe.name}" />
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="@={shoe.name}"
+            app:layout_constraintBottom_toTopOf="@+id/company_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            app:layout_constraintVertical_bias="0.089999974"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
         <TextView
             android:id="@+id/company_text"
             style="@style/DefaultLabel"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Company" />
+            android:layout_marginEnd="8dp"
+            android:text="@string/shoe_company"
+            app:layout_constraintBaseline_toBaselineOf="@+id/company_edit"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_conversion_absoluteHeight="24dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
         <EditText
             android:id="@+id/company_edit"
             style="@style/DefaultInput"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@={shoe.company}" />
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="@={shoe.company}"
+            app:layout_constraintBottom_toTopOf="@+id/size_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_edit"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
         <TextView
             android:id="@+id/size_text"
             style="@style/DefaultLabel"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:layout_marginEnd="8dp"
+            android:text="@string/shoe_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/size_edit"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_conversion_absoluteHeight="24dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
         <EditText
             android:id="@+id/size_edit"
             style="@style/DefaultInput"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@={`` +shoe.size}" />
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="number"
+            android:singleLine="true"
+            android:text="@={`` +shoe.size}"
+            app:layout_constraintBottom_toTopOf="@+id/description_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/company_edit"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
         <TextView
             android:id="@+id/description_text"
             style="@style/DefaultLabel"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description" />
+            android:layout_marginEnd="8dp"
+            android:text="@string/shoe_desc"
+            app:layout_constraintBaseline_toBaselineOf="@+id/description_edit"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_conversion_absoluteHeight="24dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
+
 
         <EditText
             android:id="@+id/description_edit"
             style="@style/DefaultInput"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@={shoe.description}" />
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="@={shoe.description}"
+            app:layout_constraintBottom_toTopOf="@+id/save_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/size_edit"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="411dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/cancel_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:background="@color/colorBackgroundCancelButton"
+            android:onClick="@{()-> fragment.navigateBack()}"
+            android:text="@android:string/cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/save_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_conversion_absoluteHeight="62dp"
+            tools:layout_conversion_absoluteWidth="206dp" />
 
-            <Button
-                android:id="@+id/cancel_button"
-                style="@style/DefaultButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cancel" />
+        <Button
+            android:id="@+id/save_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->shoesViewModel.saveShoe(shoe)}"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancel_button"
+            tools:layout_conversion_absoluteHeight="62dp"
+            tools:layout_conversion_absoluteWidth="206dp" />
 
-            <Button
-                android:id="@+id/save_button"
-                style="@style/DefaultButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="@{()->shoesViewModel.saveShoe(shoe)}"
-                android:text="SAVE" />
-        </LinearLayout>
-    </LinearLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.38" />
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/OnBoardTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/new_shoe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

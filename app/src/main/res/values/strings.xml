@@ -11,7 +11,7 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
 
-    <!-- Strings related to screen title -->
+    <!-- Strings related to title of the screens -->
     <string name="login_title">Login</string>
     <string name="welcome_title">Welcome</string>
     <string name="instruction_title">Instruction</string>
@@ -25,5 +25,17 @@
     <string name="welcome">Welcome</string>
     <string name="instruction">Instruction</string>
     <string name="logout">Logout</string>
+
+    <!-- Strings related to shoe detail screen -->
+    <string name="shoe_name">Name:</string>
+    <string name="shoe_company">Company:</string>
+    <string name="shoe_size">Size:</string>
+    <string name="shoe_desc">Description:</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_shoe">Add new shoe</string>
+
+    <string name="size_format">Size: %s</string>
+    <string name="company_format">Company: %s</string>
 
 </resources>
