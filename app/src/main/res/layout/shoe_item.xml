@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--    ViewGroup user here is ConstraintLayout, since screen is more complex and we don't want to get deep nesting hierarchy,-->
+    <!--    ViewGroup that is used here is ConstraintLayout, since screen is more complex and we don't want to get deep nesting hierarchy,-->
     <!--    also widgets need to be positioned relative to each other-->
     <data>
 
